@@ -1,26 +1,40 @@
 import tkinter as tk
 from tkinter import messagebox
 import funcionesJSON  # Asegúrate de tener este archivo con las funciones necesarias
+import re
 
 # Paleta de colores
 color_fondo = "#ffa8ff"
 color_texto = "#66a3ff"
 color_salir = "#f50505"
 
+def es_valido(texto):
+    return re.match("^[a-zA-Z0-9]+$", texto) is not None
+
 def registrar_usuario():
     usuario = nombreUsu.get()
     contrasena = contraUsu.get()
     rol = rol_var.get()
 
-    if usuario and contrasena and rol:
-        if rol == "Mozo":
-            funcionesJSON.guardar_mozo(usuario, contrasena)
-        elif rol == "Gerente":
-            funcionesJSON.guardar_gerente(usuario, contrasena)
-        messagebox.showinfo("Registro exitoso", "El usuario ha sido registrado correctamente.")
-        ventana_registro.destroy()
-    else:
+    if not (usuario and contrasena and rol):
         messagebox.showerror("Error de registro", "Todos los campos son obligatorios.")
+        return
+
+    if not es_valido(usuario):
+        messagebox.showerror("Error de registro", "El nombre de usuario solo debe contener letras y números.")
+        return
+
+    if not es_valido(contrasena):
+        messagebox.showerror("Error de registro", "La contraseña solo debe contener letras y números.")
+        return
+
+    if rol == "Mozo":
+        funcionesJSON.guardar_mozo(usuario, contrasena)
+    elif rol == "Gerente":
+        funcionesJSON.guardar_gerente(usuario, contrasena)
+        
+    messagebox.showinfo("Registro exitoso", "El usuario ha sido registrado correctamente.")
+    ventana_registro.destroy()
 
 def ventanaRegistro():
     global ventana_registro, nombreUsu, contraUsu, rol_var
@@ -54,6 +68,3 @@ def ventanaRegistro():
     boton_registrar.place(relx=0.5, rely=0.6, anchor="center")
 
     ventana_registro.mainloop()
-
-
-    
