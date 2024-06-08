@@ -1,12 +1,42 @@
 [
     {
-        "nombre": "sdad",
-        "precio": 14.0,
-        "stock": 5
+        "nombre": "Coca Cola 1.5L",
+        "precio": 2000.0,
+        "cantidad": 500
     },
     {
-        "nombre": "fungay  denhnce",
-        "precio": 4500.0,
-        "stock": 20
+        "nombre": "Fideo de queso",
+        "precio": 3000.0,
+        "cantidad": 22
+    },
+    {
+        "nombre": "Rizzoto",
+        "precio": 7500.0,
+        "cantidad": 40
+    },
+    {
+        "nombre": "Milanesa con Pure",
+        "precio": 6700.0,
+        "cantidad": 50
+    },
+    {
+        "nombre": "Hamburguesa Completa",
+        "precio": 5000.0,
+        "cantidad": 20
+    },
+    {
+        "nombre": "Hamburguesa Simple",
+        "precio": 4000.0,
+        "cantidad": 25
+    },
+    {
+        "nombre": "Empanada",
+        "precio": 1000.0,
+        "cantidad": 75
+    },
+    {
+        "nombre": "Hamburguesa Especial",
+        "precio": 2500.0,
+        "cantidad": 40
     }
 ]

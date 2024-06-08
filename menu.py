@@ -2,6 +2,7 @@ import tkinter as tk
 import sys
 import registroUser
 import ventas
+import gerencia
 import iniciarSesion
 
 # Paleta de colores
@@ -16,9 +17,19 @@ def registroUsuario():
     registroUser.ventanaRegistro()
 
 def ventanaVentas():
+    ventana.withdraw()
     def iniciar_ventas():
         ventas.ventanaVentas()
+        ventana.deiconify()
     iniciarSesion.ventanaSesion("Mozo", iniciar_ventas)
+
+def ventanaGerencia():
+    ventana.withdraw()
+    def iniciar_gerencia():
+        gerencia.ventana_gerencial()
+        ventana.deiconify()
+    iniciarSesion.ventanaSesion("Gerente", iniciar_gerencia)
+
 
 # Ventana Principal
 ventana = tk.Tk()
@@ -34,10 +45,10 @@ boton_registro = tk.Button(text="Registro", font=("impact", 25), bg=color_texto,
 boton_registro.place(relx=0.5, rely=0.5, anchor="center")
 
 boton_ventas = tk.Button(text="Ventas", font=("impact", 25), bg=color_texto, command=ventanaVentas)
-boton_ventas.place(relx=0.1, rely=0.4, anchor="center")
+boton_ventas.place(relx=0.25, rely=0.4, anchor="center")
 
-boton_gestion_gerencial = tk.Button(text="Gestion Gerencial", font=("impact", 25), bg=color_texto)
-boton_gestion_gerencial.place(relx=0.83, rely=0.4, anchor="center")
+boton_gestion_gerencial = tk.Button(text="Gestion Gerencial", font=("impact", 25), bg=color_texto, command=ventanaGerencia)
+boton_gestion_gerencial.place(relx=0.8, rely=0.4, anchor="center")
 
 boton_salir = tk.Button(text="Salir", font=("impact", 25), bg=color_salir, command=salida_principal)
 boton_salir.place(relx=0.1, rely=0.89, anchor="center")

@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 import funcionesJSON  # Asegúrate de tener este archivo con las funciones necesarias
 import re
+import os
+import json
 
 # Paleta de colores
 color_fondo = "#ffa8ff"
@@ -10,6 +12,21 @@ color_salir = "#f50505"
 
 def es_valido(texto):
     return re.match("^[a-zA-Z0-9]+$", texto) is not None
+
+def cargar_usuarios(archivo):
+    try:
+        if os.path.exists(archivo):
+            with open(archivo, 'r') as file:
+                return json.load(file)
+        else:
+            return []
+    except json.JSONDecodeError:
+        return []
+
+def usuario_existe(usuario):
+    mozos = cargar_usuarios("mozos.json")
+    gerentes = cargar_usuarios("gerentes.json")
+    return any(u["usuario"] == usuario for u in mozos + gerentes)
 
 def registrar_usuario():
     usuario = nombreUsu.get()
@@ -26,6 +43,10 @@ def registrar_usuario():
 
     if not es_valido(contrasena):
         messagebox.showerror("Error de registro", "La contraseña solo debe contener letras y números.")
+        return
+    
+    if usuario_existe(usuario):
+        messagebox.showerror("Error de registro", "El nombre de usuario ya está registrado.")
         return
 
     if rol == "Mozo":
