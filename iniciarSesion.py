@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import funcionesJSON  # Importamos las funciones para validar los datos en JSON
+import funcionesJSON 
 
 # Paleta de colores
 color_fondo = "#ffa8ff"
@@ -45,18 +45,18 @@ def ventanaSesion(rol_requerido, callback_exito):
     titulo = tk.Label(ventana_sesion, bg=color_fondo, text="Inicio de Sesión", font=("Impact", 20))
     titulo.place(relx=0.5, rely=0.10, anchor="center")
 
-    etiquetaNombreUsu = tk.Label(ventana_sesion, bg=color_fondo, text="USUARIO:")
-    etiquetaNombreUsu.place(relx=0.25, rely=0.3, anchor="center")
+    etiquetaNombreUsu = tk.Label(ventana_sesion, bg=color_fondo, text="USUARIO:", font=("arial", 9, "bold"))
+    etiquetaNombreUsu.place(relx=0.24, rely=0.3, anchor="center")
     nombreUsu = tk.Entry(ventana_sesion)
     nombreUsu.place(relx=0.5, rely=0.3, anchor="center")
 
-    etiquetaContraUsu = tk.Label(ventana_sesion, bg=color_fondo, text="CONTRASEÑA:")
-    etiquetaContraUsu.place(relx=0.22, rely=0.4, anchor="center")
+    etiquetaContraUsu = tk.Label(ventana_sesion, bg=color_fondo, text="CONTRASEÑA:", font=("arial", 9, "bold"))
+    etiquetaContraUsu.place(relx=0.21, rely=0.4, anchor="center")
     contraUsu = tk.Entry(ventana_sesion, show='*')
     contraUsu.place(relx=0.5, rely=0.4, anchor="center")
 
-    etiquetaRol = tk.Label(ventana_sesion, bg=color_fondo, text="ROL:")
-    etiquetaRol.place(relx=0.22, rely=0.5, anchor="center")
+    etiquetaRol = tk.Label(ventana_sesion, bg=color_fondo, text="ROL:", font=("arial", 9, "bold"))
+    etiquetaRol.place(relx=0.28, rely=0.5, anchor="center")
 
     rol_var = tk.StringVar(value=rol_requerido)
     opciones_rol = tk.OptionMenu(ventana_sesion, rol_var, "Mozo", "Gerente")

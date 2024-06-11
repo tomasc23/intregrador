@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import re
 import json
+import gerencia
 from funcionesJSON import guardar_prod_terminado, cargar_productos
 
 def ventana_prod_terminado():
@@ -144,6 +145,10 @@ def ventana_prod_terminado():
         except IndexError:
             messagebox.showerror("Error", "Seleccione un producto para eliminar")
 
+    def volver():
+        ventana_productos_terminados.destroy()
+        gerencia.ventana_gerencial()
+
 
     color_fondo = "#ffa8ff"
     color_texto = "#66a3ff"
@@ -157,19 +162,19 @@ def ventana_prod_terminado():
     titulosistema = tk.Label(ventana_productos_terminados, bg=color_fondo, text="PRODUCTOS TERMINADOS", font=("Impact", 25))
     titulosistema.place(relx=0.5, rely=0.10, anchor="center")
 
-    label_prod = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Nombre:")
+    label_prod = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Nombre:", font=("arial", 9, "bold"))
     label_prod.place(relx=0.33, rely=0.19, anchor="center")
 
     ent_prod = tk.Entry(ventana_productos_terminados)
     ent_prod.place(relx=0.48, rely=0.19, anchor="center")
 
-    label_precio = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Precio:")
+    label_precio = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Precio:", font=("arial", 9, "bold"))
     label_precio.place(relx=0.33, rely=0.23, anchor="center")
 
     ent_precio = tk.Entry(ventana_productos_terminados)
     ent_precio.place(relx=0.48, rely=0.23, anchor="center")
 
-    label_cantidad = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Cantidad de stock:")
+    label_cantidad = tk.Label(ventana_productos_terminados, bg=color_fondo, text="Cantidad de stock:", font=("arial", 9, "bold"))
     label_cantidad.place(relx=0.32, rely=0.27, anchor="center")
 
     ent_cantidad = tk.Entry(ventana_productos_terminados)
@@ -178,22 +183,22 @@ def ventana_prod_terminado():
     label_subtitulo = tk.Label(ventana_productos_terminados, bg=color_fondo, text="PRODUCTOS")
     label_subtitulo.place(relx=0.48, rely=0.45, anchor="center")
 
-    boton_agregar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Agregar Producto", command=registrar_prod_t)
-    boton_agregar.place(relx=0.42, rely=0.32)
+    boton_agregar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Agregar Producto", font=("Impact", 12), command=registrar_prod_t)
+    boton_agregar.place(relx=0.397, rely=0.32)
 
     lista_productos_terminados = tk.Listbox(ventana_productos_terminados, width=50, height=20)
     lista_productos_terminados.place(relx= 0.48, rely=0.7, anchor="center")
 
-    boton_modificar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Modificar Producto", command=modificar_producto)
+    boton_modificar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Modificar Producto", font=("Impact", 12), command=modificar_producto)
     boton_modificar.place(relx=0.70, rely=0.55)
 
-    boton_eliminar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Eliminar Producto", command=eliminar_prod)
+    boton_eliminar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Eliminar Producto", font=("Impact", 12), command=eliminar_prod)
     boton_eliminar.place(relx=0.70, rely=0.65)
 
-    boton_modificar_stock = tk.Button(ventana_productos_terminados, bg=color_texto, text="Modificar Stock", command=modificar_stock)
+    boton_modificar_stock = tk.Button(ventana_productos_terminados, bg=color_texto, text="Modificar Stock",font=("Impact", 12), command=modificar_stock)
     boton_modificar_stock.place(relx=0.70, rely=0.75)
 
-    boton_salir = tk.Button(ventana_productos_terminados, text="Volver", bg=color_salir, command=ventana_productos_terminados.destroy)
+    boton_salir = tk.Button(ventana_productos_terminados, text="Volver", font=("Impact", 12), bg=color_salir, command=volver)
     boton_salir.place(relx= 0.1, rely=0.79, anchor="center")
 
     productos = cargar_productos()

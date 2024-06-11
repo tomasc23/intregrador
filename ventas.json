@@ -1,0 +1,13 @@
+[
+    {
+        "numero_mesa": "1",
+        "consumicion": [
+            "Pizza Calabresa",
+            "Empanada Gallega",
+            "Empanada de Pollo",
+            "7up 1L"
+        ],
+        "total": 14500.0,
+        "fecha": "2024-06-11 15:45:40"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "razon_social": "Bananas SRL",
+        "cuit": "24-43635214-7",
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "ciudad": "CABA",
+        "direccion": "Ayacucho 1232",
+        "telefono": "0114859632",
+        "email": "bananitas21@gmail.com"
+    },
+    {
+        "razon_social": "Carniceria Kuka",
+        "cuit": "40-58741236-1",
+        "pais": "Argentina",
+        "provincia": "Santa Fe",
+        "ciudad": "Rosario",
+        "direccion": "Av San Martin 334",
+        "telefono": "3412584789",
+        "email": "kukascarnes@gmail.com"
+    },
+    {
+        "razon_social": "Coca Cola SA",
+        "cuit": "58-47896523-1",
+        "pais": "Argentina",
+        "provincia": "Formosa",
+        "ciudad": "Ciudad de Formosa",
+        "direccion": "Av 9 de julio",
+        "telefono": "3704123698",
+        "email": "cocafsa@gmail.com"
+    }
+]

@@ -3,6 +3,7 @@ import json
 from tkinter import messagebox
 import funcionesJSON
 from tkinter import simpledialog
+import gerencia
 
 
 def ventanaMenu_Gerencia():
@@ -70,6 +71,10 @@ def ventanaMenu_Gerencia():
         else:
             messagebox.showwarning("Advertencia", "Por favor, selecciona una comida del menú antes de eliminarla.")
 
+    def volver():
+        ventana_menu_comida.destroy()
+        gerencia.ventana_gerencial()
+
     # Paleta de colores
     color_fondo = "#ffa8ff"
     color_texto = "#66a3ff"
@@ -86,23 +91,23 @@ def ventanaMenu_Gerencia():
 
     # Botones y entradas
     boton_cargar_comida = tk.Button(ventana_menu_comida, text="Cargar Comida", width=15, font=("impact",14), bg=color_texto, command=cargar_comida)
-    boton_cargar_comida.place(relx= 0.25, rely=0.2, anchor="center")
+    boton_cargar_comida.place(relx= 0.5, rely=0.45, anchor="center")
 
     boton_modificar_comida = tk.Button(ventana_menu_comida, text="Modificar Precio", width=15, font=("impact",14), bg=color_texto, command=modificar_precio)
-    boton_modificar_comida.place(relx= 0.5, rely=0.2, anchor="center")
+    boton_modificar_comida.place(relx= 0.5, rely=0.55, anchor="center")
 
-    boton_elim_comida = tk.Button(ventana_menu_comida, text="Eliminar Comida", width=15, font=("impact",14), bg=color_texto, command=eliminar_comida)
-    boton_elim_comida.place(relx= 0.5, rely=0.5, anchor="center")
+    boton_elim_comida = tk.Button(ventana_menu_comida, text="Eliminar Comida", width=15, font=("impact",14), bg="red", command=eliminar_comida)
+    boton_elim_comida.place(relx= 0.5, rely=0.65, anchor="center")
 
-    boton_salir = tk.Button(ventana_menu_comida, text="VOLVER", font=("impact",14), bg=color_salir, command=ventana_menu_comida.destroy)
+    boton_salir = tk.Button(ventana_menu_comida, text="VOLVER", font=("impact",14), bg=color_salir, command=volver)
     boton_salir.place(relx= 0.040, rely=0.94, anchor="center")
 
     #LISTBOX 
-    label_lista_menu = tk.Label(ventana_menu_comida, text="LISTA DE COMIDAS",bg= color_fondo,font=("impact", 14))
-    label_lista_menu.place(relx= 0.20, rely= 0.3)
+    label_lista_menu = tk.Label(ventana_menu_comida, text="NUEVO MENÚ:",bg= color_fondo,font=("impact", 14))
+    label_lista_menu.place(relx= 0.12, rely= 0.35)
 
-    label_lista_de_comidas = tk.Label(ventana_menu_comida, text="PRODUCTOS DISPONIBLES",bg= color_fondo,font=("impact", 14))
-    label_lista_de_comidas.place(relx= 0.68, rely= 0.3)
+    label_lista_de_comidas = tk.Label(ventana_menu_comida, text="PRODUCTOS DISPONIBLES:",bg= color_fondo,font=("impact", 14))
+    label_lista_de_comidas.place(relx= 0.63, rely= 0.35)
 
     caja_lista_de_menu = tk.Listbox(ventana_menu_comida, width=55, height=20)
     caja_lista_de_menu.place(relx=0.12, rely=0.4)

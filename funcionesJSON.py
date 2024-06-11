@@ -41,18 +41,16 @@ def validar_gerente(usuario, contrasena):
                     return True
     return False
 
-def guardar_prod_terminado(productos, archivo='productos.json'):
-    with open(archivo, 'w') as file:
+def guardar_prod_terminado(productos):
+    with open('productos.json', 'w') as file:
         json.dump(productos, file, indent=4)
 
-def cargar_productos(archivo='productos.json'):
+def cargar_productos():
     try:
-        with open(archivo, 'r') as file:
+        with open('productos.json', 'r') as file:
             return json.load(file)
     except FileNotFoundError:
         return []
-    except json.JSONDecodeError:
-        return[]
     
 
 ARCHIVO_MENU = 'menu.json'
@@ -76,3 +74,36 @@ def cargar_menu():
         return []
     except json.JSONDecodeError:
         return []
+    
+def guardar_pedidos(pedidos, archivo="pedidos.json"):
+    with open(archivo, "w") as archivo_pedidos:
+        json.dump(pedidos, archivo_pedidos, indent=4)
+
+def cargar_pedidos(archivo="pedidos.json"):
+    if os.path.exists(archivo):
+        with open(archivo, "r") as archivo_pedidos:
+            return json.load(archivo_pedidos)
+    else:
+        return []
+    
+def cargar_ventas():
+    if not os.path.exists("ventas.json"):
+        return []
+    with open("ventas.json", "r") as archivo:
+        return json.load(archivo)
+
+def guardar_ventas(ventas):
+    with open("ventas.json", "w") as archivo:
+        json.dump(ventas, archivo, indent=4)
+
+def cargar_proveedores():
+        try:
+            with open('proveedores.json', 'r') as file:
+                proveedores = json.load(file)
+        except FileNotFoundError:
+            proveedores = []
+        return proveedores
+
+def guardar_proveedores(proveedores):
+    with open('proveedores.json', 'w') as file:
+        json.dump(proveedores, file, indent=4)

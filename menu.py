@@ -5,6 +5,7 @@ import ventas
 import gerencia
 import iniciarSesion
 
+
 # Paleta de colores
 color_fondo = "#ffa8ff"
 color_texto = "#66a3ff"
@@ -41,14 +42,14 @@ titulosistema = tk.Label(bg=color_fondo, text="Sistema Gastronomico", font=("Imp
 titulosistema.place(relx=0.5, rely=0.10, anchor="center")
 
 # Botones y entradas
-boton_registro = tk.Button(text="Registro", font=("impact", 25), bg=color_texto, command=registroUsuario)
+boton_registro = tk.Button(text="Registro", font=("impact", 25), width=15,bg=color_texto, command=registroUsuario)
 boton_registro.place(relx=0.5, rely=0.5, anchor="center")
 
-boton_ventas = tk.Button(text="Ventas", font=("impact", 25), bg=color_texto, command=ventanaVentas)
-boton_ventas.place(relx=0.25, rely=0.4, anchor="center")
+boton_ventas = tk.Button(text="Ventas", font=("impact", 25), width=15, bg=color_texto, command=ventanaVentas)
+boton_ventas.place(relx=0.24, rely=0.4, anchor="center")
 
-boton_gestion_gerencial = tk.Button(text="Gestion Gerencial", font=("impact", 25), bg=color_texto, command=ventanaGerencia)
-boton_gestion_gerencial.place(relx=0.8, rely=0.4, anchor="center")
+boton_gestion_gerencial = tk.Button(text="Gestion Gerencial", font=("impact", 25), width=15, bg=color_texto, command=ventanaGerencia)
+boton_gestion_gerencial.place(relx=0.76, rely=0.4, anchor="center")
 
 boton_salir = tk.Button(text="Salir", font=("impact", 25), bg=color_salir, command=salida_principal)
 boton_salir.place(relx=0.1, rely=0.89, anchor="center")
