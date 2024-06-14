@@ -1,6 +1,7 @@
 import tkinter as tk
 import json
 from tkinter import messagebox
+import sys
 
 def ventana_gerencial():
     from menu_gerencia import ventanaMenu_Gerencia
@@ -23,6 +24,9 @@ def ventana_gerencial():
     def abrir_ventana_gest_menu():
         ventana_gerencia.withdraw()
         ventanaMenu_Gerencia()
+    
+    def salir_todo():
+        sys.exit()
     
     # Paleta de colores
     color_fondo = "#ffa8ff"
@@ -54,7 +58,7 @@ def ventana_gerencial():
     boton_proveedores = tk.Button(ventana_gerencia, text="Proveedores", width=20, font=("impact",14), bg=color_texto, command=abrir_ventana_proveedores)
     boton_proveedores.place(relx= 0.50, rely=0.25, anchor="center")
 
-    boton_salir = tk.Button(ventana_gerencia, text="Salir",font=("impact",14), bg=color_salir, command=ventana_gerencia.destroy)
+    boton_salir = tk.Button(ventana_gerencia, text="Salir",font=("impact",14), bg=color_salir, command=salir_todo)
     boton_salir.place(relx= 0.2, rely=0.65, anchor="center")
 
     ventana_gerencia.mainloop()

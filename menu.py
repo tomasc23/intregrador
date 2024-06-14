@@ -5,7 +5,6 @@ import ventas
 import gerencia
 import iniciarSesion
 
-
 # Paleta de colores
 color_fondo = "#ffa8ff"
 color_texto = "#66a3ff"
@@ -22,14 +21,18 @@ def ventanaVentas():
     def iniciar_ventas():
         ventas.ventanaVentas()
         ventana.deiconify()
-    iniciarSesion.ventanaSesion("Mozo", iniciar_ventas)
+    def volver():
+        ventana.deiconify()
+    iniciarSesion.ventanaSesion("Mozo", iniciar_ventas, volver)
 
 def ventanaGerencia():
     ventana.withdraw()
     def iniciar_gerencia():
         gerencia.ventana_gerencial()
         ventana.deiconify()
-    iniciarSesion.ventanaSesion("Gerente", iniciar_gerencia)
+    def volver():
+        ventana.deiconify()
+    iniciarSesion.ventanaSesion("Gerente", iniciar_gerencia, volver)
 
 
 # Ventana Principal

@@ -2,7 +2,7 @@
     {
         "nombre": "Hamburguesa Cheese",
         "precio": 5000.0,
-        "cantidad": 9
+        "cantidad": 10
     },
     {
         "nombre": "Hamburguesa Bacon",
@@ -12,7 +12,7 @@
     {
         "nombre": "Hamburguesa Completa",
         "precio": 7000.0,
-        "cantidad": 9
+        "cantidad": 10
     },
     {
         "nombre": "Empanada de Carne",

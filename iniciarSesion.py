@@ -34,7 +34,7 @@ def iniciar_sesion(rol_requerido):
         messagebox.showerror("Error de inicio de sesión", "Usuario o contraseña incorrectos.")
         return False
 
-def ventanaSesion(rol_requerido, callback_exito):
+def ventanaSesion(rol_requerido, callback_exito, callback_volver):
     global ventana_sesion, nombreUsu, contraUsu, rol_var
 
     ventana_sesion = tk.Toplevel()
@@ -68,6 +68,13 @@ def ventanaSesion(rol_requerido, callback_exito):
 
     boton_iniciar_sesion = tk.Button(ventana_sesion, text="Iniciar Sesión", font=("impact", 15), bg=color_texto, command=on_iniciar_sesion)
     boton_iniciar_sesion.place(relx=0.5, rely=0.6, anchor="center")
+
+    def volver():
+        ventana_sesion.destroy()
+        callback_volver()
+
+    boton_volver = tk.Button(ventana_sesion, text="Volver", font=("impact", 10), bg="red", command=volver)
+    boton_volver.place(relx=0.5, rely=0.75, anchor="center")
 
     ventana_sesion.mainloop()
 

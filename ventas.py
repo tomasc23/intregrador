@@ -4,6 +4,7 @@ import funcionesJSON
 import json
 import os
 from datetime import datetime
+import sys
 
 # Definición de los colores
 color_fondo = "#ffa8ff"
@@ -389,6 +390,9 @@ def ventanaVentas():
             consumiciones = ", ".join(pedido["consumicion"])
             subtotal = pedido["subtotal"]
             caja_lista_de_pedido.insert(tk.END, f"Mesa {numero_mesa}: Consumición: {consumiciones}, Subtotal: ${subtotal}")
+    
+    def salir_todo():
+        sys.exit()
 
     pedidos = funcionesJSON.cargar_pedidos()
     ventana_ventas = tk.Toplevel()
@@ -411,11 +415,11 @@ def ventanaVentas():
     boton_cerrar_mesa = tk.Button(ventana_ventas, text="Cerrar Mesa", width=15, font=("Impact", 20), bg=color_texto, command=cerrar_mesa)
     boton_cerrar_mesa.place(relx=0.87, rely=0.2, anchor="center")
 
-    boton_salir = tk.Button(ventana_ventas, text="Salir", font=("Impact", 20), bg=color_salir, command=ventana_ventas.destroy)
+    boton_salir = tk.Button(ventana_ventas, text="Salir", font=("Impact", 20), bg=color_salir, command=salir_todo)
     boton_salir.place(relx=0.040, rely=0.94, anchor="center")
 
     label_lista_de_pedido = tk.Label(ventana_ventas, text="Lista de Pedidos:", bg=color_fondo, font=("Impact", 20))
-    label_lista_de_pedido.place(relx=0.2, rely=0.34)
+    label_lista_de_pedido.place(relx=0.19, rely=0.275)
 
     frame_pedidos = tk.Frame(ventana_ventas)
     frame_pedidos.place(relx=0.5, rely=0.6, anchor="center")
