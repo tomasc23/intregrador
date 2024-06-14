@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import funcionesJSON  # Asegúrate de tener este archivo con las funciones necesarias
+import funcionesJSON 
 import re
 import os
 import json
@@ -89,3 +89,4 @@ def ventanaRegistro():
     boton_registrar.place(relx=0.5, rely=0.6, anchor="center")
 
     ventana_registro.mainloop()
+    

@@ -138,10 +138,10 @@ def ventana_prod_terminado():
     def eliminar_prod():
         try:
             indice_seleccionado = lista_productos_terminados.curselection()[0]
-            producto_eliminado = productos.pop(indice_seleccionado)
+            producto_seleccionado = productos.pop(indice_seleccionado)
             guardar_prod_terminado(productos)
             lista_productos_terminados.delete(indice_seleccionado)
-            messagebox.showinfo("Éxito", f"Producto '{producto_eliminado['nombre']}' eliminado correctamente")
+            messagebox.showinfo("Éxito", f"Producto '{producto_seleccionado['nombre']}' eliminado correctamente")
         except IndexError:
             messagebox.showerror("Error", "Seleccione un producto para eliminar")
 
@@ -194,10 +194,8 @@ def ventana_prod_terminado():
 
     boton_eliminar = tk.Button(ventana_productos_terminados, bg=color_texto, text="Eliminar Producto", font=("Impact", 12), command=eliminar_prod)
     boton_eliminar.place(relx=0.70, rely=0.65)
-
     boton_modificar_stock = tk.Button(ventana_productos_terminados, bg=color_texto, text="Modificar Stock",font=("Impact", 12), command=modificar_stock)
     boton_modificar_stock.place(relx=0.70, rely=0.75)
-
     boton_salir = tk.Button(ventana_productos_terminados, text="Volver", font=("Impact", 12), bg=color_salir, command=volver)
     boton_salir.place(relx= 0.1, rely=0.79, anchor="center")
 
@@ -206,3 +204,4 @@ def ventana_prod_terminado():
         lista_productos_terminados.insert(tk.END, f"{producto['nombre']} | Precio $: {producto['precio']} | Cantidad: {producto['cantidad']}")
 
     ventana_productos_terminados.mainloop()
+    

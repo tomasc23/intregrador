@@ -64,7 +64,7 @@ def ventana_infoventas():
 
         messagebox.showinfo("Información", f"Informe de ventas generado correctamente. Se descargó en: {ruta_destino}")
             
-    def borrar_pedido_seleccionado():
+    def borrar_venta_seleccionada():
         seleccion = caja_lista_ventas.curselection()
         if seleccion:
             indice = seleccion[0]
@@ -73,9 +73,9 @@ def ventana_infoventas():
 
             funcionesJSON.guardar_ventas(ventas)
             cargar_ventas_en_listbox()
-            messagebox.showinfo("Información", "Pedido eliminado exitosamente.")
+            messagebox.showinfo("Información", "Venta eliminada exitosamente.")
         else:
-            messagebox.showwarning("Advertencia", "Seleccione un pedido para eliminar.")
+            messagebox.showwarning("Advertencia", "Seleccione una venta para eliminar.")
 
     def volver():
         ventana_info_ventas.destroy()
@@ -128,7 +128,7 @@ def ventana_infoventas():
     boton_imprimir = tk.Button(ventana_info_ventas, text="Imprimir", bg=color_texto, font=("Impact", 12), command=imprimir_informacion)
     boton_imprimir.grid(row=6, column=1, pady=10)
 
-    boton_eliminar = tk.Button(ventana_info_ventas, text="Eliminar Venta", bg=color_salir, font=("Impact", 12), command=borrar_pedido_seleccionado)
+    boton_eliminar = tk.Button(ventana_info_ventas, text="Eliminar Venta", bg=color_salir, font=("Impact", 12), command=borrar_venta_seleccionada)
     boton_eliminar.grid(row=5, column=3, pady=10)
 
     # Cargar las ventas al inicio

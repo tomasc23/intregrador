@@ -2,7 +2,6 @@ import tkinter as tk
 import json
 from tkinter import messagebox
 
-
 def ventana_gerencial():
     from menu_gerencia import ventanaMenu_Gerencia
     from gestproveedores import ventana_proveedores
@@ -59,3 +58,4 @@ def ventana_gerencial():
     boton_salir.place(relx= 0.2, rely=0.65, anchor="center")
 
     ventana_gerencia.mainloop()
+    

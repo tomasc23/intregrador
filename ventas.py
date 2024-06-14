@@ -28,7 +28,6 @@ def ventanaVentas():
         label_cargar = tk.Label(ventana_cargarPedido, text="Cargar Pedido", bg=color_fondo, font=("Impact", 20))
         label_cargar.place(relx=0.5, rely=0.1, anchor="center")
 
-        #Sección de N° Mesa y Consumo
         label_numero_mesa = tk.Label(ventana_cargarPedido, text="N° Mesa:", bg=color_fondo, font=("Impact", 16))
         label_numero_mesa.place(relx=0.25, rely=0.2, anchor="center")
 
@@ -42,7 +41,6 @@ def ventanaVentas():
         label_consumicion = tk.Label(ventana_cargarPedido, text="Consumición:", bg=color_fondo, font=("Impact", 16))
         label_consumicion.place(relx=0.10, rely=0.3, anchor="center")
 
-        #Listbox de Consumición con Scrollbar
         marco_consumicion = tk.Frame(ventana_cargarPedido)
         marco_consumicion.place(relx=0.3, rely=0.45, anchor="center")
 
@@ -53,7 +51,6 @@ def ventanaVentas():
         scrollbar_consumicion.pack(side=tk.RIGHT, fill=tk.Y)
         listbox_consumicion.pack(side=tk.LEFT, fill=tk.BOTH)
 
-        #subtotal
         subtotal = 0.0
         label_subtotal = tk.Label(ventana_cargarPedido, text="Subtotal:", bg=color_fondo, font=("Impact", 16))
         label_subtotal.place(relx=0.3, rely=0.8, anchor="center")
@@ -238,6 +235,7 @@ def ventanaVentas():
     #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     def modificar_pedido():
+        pedidos = funcionesJSON.cargar_pedidos()
         indice_seleccionado = caja_lista_de_pedido.curselection()
         if indice_seleccionado:
             indice = indice_seleccionado[0]
@@ -305,7 +303,6 @@ def ventanaVentas():
             label_modificar = tk.Label(ventana_modificar_pedido, text="Modificar Pedido", bg=color_fondo, font=("Impact", 20))
             label_modificar.place(relx=0.5, rely=0.1, anchor="center")
 
-            # Sección de N° Mesa y Consumo
             label_numero_mesa = tk.Label(ventana_modificar_pedido, text="N° Mesa:", bg=color_fondo, font=("Impact", 16))
             label_numero_mesa.place(relx=0.25, rely=0.2, anchor="center")
 
@@ -319,7 +316,6 @@ def ventanaVentas():
             label_consumicion = tk.Label(ventana_modificar_pedido, text="Consumición:", bg=color_fondo, font=("Impact", 16))
             label_consumicion.place(relx=0.10, rely=0.3, anchor="center")
 
-            #Listbox de Consumición con Scrollbar
             marco_consumicion = tk.Frame(ventana_modificar_pedido)
             marco_consumicion.place(relx=0.3, rely=0.45, anchor="center")
 
@@ -330,7 +326,6 @@ def ventanaVentas():
             scrollbar_consumicion.pack(side=tk.RIGHT, fill=tk.Y)
             listbox_consumicion.pack(side=tk.LEFT, fill=tk.BOTH)
 
-            #Inicializar el subtotal
             subtotal = pedido_seleccionado["subtotal"]
             label_subtotal = tk.Label(ventana_modificar_pedido, text="Subtotal:", bg=color_fondo, font=("Impact", 16))
             label_subtotal.place(relx=0.3, rely=0.8, anchor="center")
@@ -352,7 +347,6 @@ def ventanaVentas():
                 subtotal += precio
                 label_subtotal_valor.config(text=f"${subtotal:.2f}")
 
-            # Sección de Menú
             label_menu = tk.Label(ventana_modificar_pedido, text="Menú:", bg=color_fondo, font=("Impact", 16))
             label_menu.place(relx=0.75, rely=0.2, anchor="center")
             marco_menu = tk.Frame(ventana_modificar_pedido)

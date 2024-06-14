@@ -4,10 +4,7 @@ from tkinter import messagebox
 import funcionesJSON
 from tkinter import simpledialog
 import gerencia
-
-
 def ventanaMenu_Gerencia():
-    
     def cargar_comida():
         seleccion = caja_productos_t.curselection()
         if seleccion:
@@ -34,7 +31,6 @@ def ventanaMenu_Gerencia():
             funcionesJSON.guardar_menu(menu)  
         else:
             messagebox.showwarning("Advertencia", "Por favor, selecciona un producto de la lista antes de cargar comida.")
-
     def modificar_precio():
         seleccion = caja_lista_de_menu.curselection()
         
@@ -128,3 +124,4 @@ def ventanaMenu_Gerencia():
         caja_lista_de_menu.insert(tk.END, f"{comida['nombre']} --- ${comida['precio']}")
 
     ventana_menu_comida.mainloop()
+    

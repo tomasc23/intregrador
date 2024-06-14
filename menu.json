@@ -2,7 +2,7 @@
     {
         "nombre": "Hamburguesa Cheese",
         "precio": 5000.0,
-        "cantidad": 10
+        "cantidad": 9
     },
     {
         "nombre": "Hamburguesa Bacon",
@@ -12,7 +12,7 @@
     {
         "nombre": "Hamburguesa Completa",
         "precio": 7000.0,
-        "cantidad": 10
+        "cantidad": 9
     },
     {
         "nombre": "Empanada de Carne",
@@ -47,7 +47,7 @@
     {
         "nombre": "Pepsi 1L",
         "precio": 1800.0,
-        "cantidad": 100
+        "cantidad": 99
     },
     {
         "nombre": "Mirinda 1L",
@@ -62,7 +62,7 @@
     {
         "nombre": "Lomito Especial",
         "precio": 4500.0,
-        "cantidad": 10
+        "cantidad": 8
     },
     {
         "nombre": "Lomito Completo",

@@ -28,5 +28,15 @@
         "direccion": "Av 9 de julio",
         "telefono": "3704123698",
         "email": "cocafsa@gmail.com"
+    },
+    {
+        "razon_social": "Verduler\u00eda Jose",
+        "cuit": "69-48478521-2",
+        "pais": "Argentina",
+        "provincia": "Salta",
+        "ciudad": "Joaquin V Gonzalez",
+        "direccion": "Salta y SGTO Cabral",
+        "telefono": "3877472019",
+        "email": "joseventas69@gmial.com"
     }
 ]

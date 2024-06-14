@@ -9,5 +9,15 @@
         ],
         "total": 14500.0,
         "fecha": "2024-06-11 15:45:40"
+    },
+    {
+        "numero_mesa": "1",
+        "consumicion": [
+            "Pepsi 1L",
+            "Lomito Especial",
+            "Lomito Especial"
+        ],
+        "total": 10800.0,
+        "fecha": "2024-06-12 21:53:18"
     }
 ]
